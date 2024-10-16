@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import localFont from "next/font/local";
-import {Inter, IBM_Plex_Serif} from "next/dist/compiled/@next/font/dist/google";
+import {IBM_Plex_Serif, Inter} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({subsets: ["latin"], variable: '--font-inter'});
@@ -36,9 +36,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body
-            className={`${inter.variable} ${ibmPlexSerif.variable}`}
-        >
+        <body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
         {children}
         </body>
         </html>
