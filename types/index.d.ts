@@ -155,7 +155,7 @@ declare interface HeaderBoxProps {
   user?: string;
 }
 
-declare interface MobileNavProps {
+declare interface MobileNavBarProps {
   user: User;
 }
 
