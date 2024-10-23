@@ -14,21 +14,22 @@ export const signIn = async () => {
 };
 
 export const signUp = async (userData: SignUpParams) => {
-    const { email, password, firstName, lastName } = userData;
+    const {email, password, firstName, lastName} = userData;
 
     try {
-        const { account } = await createAdminClient();
+        const {account} = await createAdminClient();
 
         const newUserAccount = await account.create(
             ID.unique(),
             email,
             password,
-            `${firstName} ${lastName}`
+            `${firstName} ${lastName}`,
         );
 
         const session = await account.createEmailPasswordSession(email, password);
 
-        cookies().set("appwrite-session", session.secret, {
+        const cookiesStore = cookies();
+        (cookiesStore as any).set("appwrite-session", session.secret, {
             path: "/",
             httpOnly: true,
             sameSite: "strict",
@@ -37,14 +38,16 @@ export const signUp = async (userData: SignUpParams) => {
 
         return parseStringify(newUserAccount);
     } catch (error) {
-        console.error('Error', error);
+        console.error("Error", error);
     }
-}
+};
 
 export async function getLoggedInUser() {
     try {
-        const {account} = createSessionClient();
-        return await account.get();
+        const {account} = await createSessionClient();
+        const user = await account.get();
+
+        return parseStringify(user);
     } catch (error) {
         return null;
     }

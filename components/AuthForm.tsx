@@ -13,7 +13,7 @@ import CustomInput from "@/components/CustomInput";
 import {authFormSchema} from "@/lib/utils";
 import {Loader2} from "lucide-react";
 import {useRouter} from "next/navigation";
-import {signUp} from "@/lib/actions/user.actions";
+import {getLoggedInUser, signUp} from "@/lib/actions/user.actions";
 
 const AuthForm = ({type}: { type: string }) => {
     const router = useRouter();
