@@ -10,18 +10,18 @@ Vanguard is a financial platform that aims to offer comprehensive tools for mana
 
 ## Tech Stack
 ### Back-end
-* Appwrite
+* [Appwrite](https://appwrite.io/)
 
 ### Front-end
-* Next.js
-* TailWindCSS
-* ShadCN
-* Chart.js
-* Zod
-* ReactHookForm
+* [Next.js](https://nextjs.org/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [shadcn/ui](https://ui.shadcn.com/)
+* [Chart.js](https://www.chartjs.org/)
+* [Zod](https://zod.dev/)
+* [React Hook Form](https://react-hook-form.com/)
 
 ### Languages
-* TypeScript
+* [TypeScript](https://www.typescriptlang.org/)
 
 ## Getting Started
 Firstly, make sure to install all dependencies with your package manager of choice:
