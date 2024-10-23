@@ -1,5 +1,3 @@
-"use server";
-
 import {Client, Account, Databases, Users} from "node-appwrite";
 
 export const SESSION_COOKIE = 'appwrite-session';

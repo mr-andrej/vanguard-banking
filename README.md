@@ -27,7 +27,7 @@
     <tr>
         <td align="center">📈 Trading</td>
         <td align="center">🔴 Recession Indicator</td>
-        <td align="center">🛡️ Risk Profile</td>
+        <td align="center">🛡️ Risk Profiler</td>
     </tr>
   </table>
 </div>

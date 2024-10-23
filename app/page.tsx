@@ -4,7 +4,7 @@ import {getLoggedInUser} from "@/lib/actions/user.actions";
 export default async function Home() {
     const user = await getLoggedInUser();
 
-    if (!user) redirect("/signup");
+    if (!user) redirect("/sign-up");
 
     redirect("/account");
 }
