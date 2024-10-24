@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import HeaderBox from "@/components/headerBox";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
 import RightSidebar from "@/components/RightSidebar";
@@ -14,7 +14,7 @@ const Home = async () => {
                     <HeaderBox
                         type="greeting"
                         title="Welcome"
-                        user={loggedIn?.name || 'Guest'}
+                        user={loggedIn?.name || "Guest"}
                         subtext="Access and manage your account and transactions efficiently."
                     />
                     <TotalBalanceBox
@@ -30,9 +30,9 @@ const Home = async () => {
             <RightSidebar
                 user={loggedIn}
                 transactions={[]}
-                banks={[{ currentBalance: 123.50}, {currentBalance: 500}]}
+                banks={[{currentBalance: 123.50}, {currentBalance: 500}]}
             />
         </section>
-    )
-}
+    );
+};
 export default Home;

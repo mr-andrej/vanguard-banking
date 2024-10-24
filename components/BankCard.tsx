@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {formatAmount} from "@/lib/utils";
@@ -58,6 +58,6 @@ const BankCard = ({account, userName, showBalance = true}: CreditCardProps) => {
 
             {/* TODO: Add copy card digits feature */}
         </div>
-    )
-}
-export default BankCard
+    );
+};
+export default BankCard;

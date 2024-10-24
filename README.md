@@ -46,9 +46,11 @@
 <div align="center">
 
 ### Back-end
+
 [![Appwrite](https://img.shields.io/badge/Appwrite-BaaS-orange)](https://appwrite.io/)
 
 ### Front-end
+
 [![Next.js](https://img.shields.io/badge/Next.js-Framework-black)](https://nextjs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Styling-06B6D4)](https://tailwindcss.com/)
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-black)](https://ui.shadcn.com/)
@@ -57,9 +59,11 @@
 [![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-Forms-EC5990)](https://react-hook-form.com/)
 
 ### Monitoring
+
 [![Sentry](https://img.shields.io/badge/Sentry-Error%20Tracking-362D59)](https://sentry.io/)
 
 ### Language
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-Language-3178C6)](https://www.typescriptlang.org/)
 </div>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import BankCard from "@/components/BankCard";
@@ -61,6 +61,6 @@ const RightSidebar = ({user, transactions, banks}: RightSidebarProps) => {
                 )}
             </section>
         </aside>
-    )
-}
-export default RightSidebar
+    );
+};
+export default RightSidebar;

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {sidebarLinks} from "@/constants";
@@ -24,14 +24,14 @@ const Sidebar = ({user}: SidebarProps) => {
                 </Link>
 
                 {sidebarLinks.map((item) => {
-                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
+                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
 
                     return (
                         <Link
                             href={item.route}
                             key={item.label}
                             className={cn("sidebar-link", {
-                                "bg-bank-gradient": isActive
+                                "bg-bank-gradient": isActive,
                             })}
                         >
                             <div className="relative size-6">
@@ -39,18 +39,18 @@ const Sidebar = ({user}: SidebarProps) => {
                                     src={item.imgURL}
                                     alt={item.label}
                                     fill
-                                    className={cn({'brightness-[3] invert-0': isActive})}
+                                    className={cn({"brightness-[3] invert-0": isActive})}
                                 />
                             </div>
                             <p className={cn("sidebar-label", {"!text-white": isActive})}>{item.label}</p>
                         </Link>
-                    )
+                    );
                 })}
                 USER
             </nav>
 
-            <Footer user={user} />
+            <Footer user={user}/>
         </section>
-    )
-}
-export default Sidebar
+    );
+};
+export default Sidebar;
