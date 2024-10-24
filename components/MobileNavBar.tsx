@@ -1,12 +1,13 @@
 "use client";
 
-import React from 'react';
-import {Sheet, SheetClose, SheetContent, SheetTrigger,} from "@/components/ui/sheet"
+import React from "react";
+import {Sheet, SheetClose, SheetContent, SheetTrigger} from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
 import {sidebarLinks} from "@/constants";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
+import Footer from "@/components/Footer";
 
 const MobileNavBar = ({user}: MobileNavBarProps) => {
     const pathname = usePathname();
@@ -36,7 +37,7 @@ const MobileNavBar = ({user}: MobileNavBarProps) => {
                         <SheetClose asChild>
                             <nav className="flex h-full flex-col gap-6 pt-16 text-white">
                                 {sidebarLinks.map((item) => {
-                                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
+                                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
 
                                     return (
                                         <SheetClose asChild key={item.route}>
@@ -44,7 +45,7 @@ const MobileNavBar = ({user}: MobileNavBarProps) => {
                                                 href={item.route}
                                                 key={item.label}
                                                 className={cn("mobilenav-sheet_close w-full", {
-                                                    "bg-bank-gradient": isActive
+                                                    "bg-bank-gradient": isActive,
                                                 })}
                                             >
                                                 <Image
@@ -52,23 +53,23 @@ const MobileNavBar = ({user}: MobileNavBarProps) => {
                                                     alt={item.label}
                                                     width={20}
                                                     height={20}
-                                                    className={cn({'brightness-[3] invert-0': isActive})}
+                                                    className={cn({"brightness-[3] invert-0": isActive})}
                                                 />
                                                 <p className={cn("text-16 font-semibold text-black-2", {"!text-white": isActive})}>{item.label}</p>
                                             </Link>
                                         </SheetClose>
-                                    )
+                                    );
                                 })}
 
                                 USER
                             </nav>
                         </SheetClose>
-                        FOOTER
+                        <Footer user={user} type="mobile"/>
                     </div>
                 </SheetContent>
             </Sheet>
 
         </section>
-    )
-}
-export default MobileNavBar
+    );
+};
+export default MobileNavBar;
