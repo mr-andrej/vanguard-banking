@@ -35,7 +35,7 @@
 ## 📋 Implementation Status
 
 - [x] Authentication (Sign in & Sign up)
-- [ ] Bank account integration [0%]
+- [ ] Bank account integration [5%]
 - [ ] Transaction tracking [0%]
 - [ ] Money transfers [0%]
 - [ ] Dashboard analytics [0%]
@@ -57,6 +57,9 @@
 [![Chart.js](https://img.shields.io/badge/Chart.js-Visualization-FF6384)](https://www.chartjs.org/)
 [![Zod](https://img.shields.io/badge/Zod-Validation-3068B7)](https://zod.dev/)
 [![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-Forms-EC5990)](https://react-hook-form.com/)
+
+### Integrations
+[![Plaid](https://img.shields.io/badge/Plaid-Banking%20API-000000)](https://plaid.com/)
 
 ### Monitoring
 
