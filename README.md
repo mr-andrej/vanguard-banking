@@ -35,7 +35,7 @@
 ## 📋 Implementation Status
 
 - [x] Authentication (Sign in & Sign up)
-- [ ] Bank account integration [5%]
+- [ ] Bank account integration [15%]
 - [ ] Transaction tracking [0%]
 - [ ] Money transfers [0%]
 - [ ] Dashboard analytics [0%]
@@ -60,6 +60,7 @@
 
 ### Integrations
 [![Plaid](https://img.shields.io/badge/Plaid-Banking%20API-000000)](https://plaid.com/)
+[![Dwolla](https://img.shields.io/badge/Dwolla-Payment%20Processing-FF7043)](https://www.dwolla.com/)
 
 ### Monitoring
 
