@@ -59,6 +59,7 @@
 [![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-Forms-EC5990)](https://react-hook-form.com/)
 
 ### Integrations
+
 [![Plaid](https://img.shields.io/badge/Plaid-Banking%20API-000000)](https://plaid.com/)
 [![Dwolla](https://img.shields.io/badge/Dwolla-Payment%20Processing-FF7043)](https://www.dwolla.com/)
 

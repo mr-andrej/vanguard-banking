@@ -13,10 +13,10 @@ const PlaidLink = ({user, variant}: PlaidLinkProps) => {
             const data = await createLinkToken(user);
 
             setToken(data?.linkToken);
-        }
+        };
 
         getLinkToken();
-    }, [user])
+    }, [user]);
 
     const onSuccess = useCallback<PlaidLinkOnSuccess>(async (public_token: string) => {
         // await exchangePublicToken({
@@ -24,7 +24,7 @@ const PlaidLink = ({user, variant}: PlaidLinkProps) => {
         //     user,
         // });
 
-    router.push('/');
+        router.push("/");
     }, [user]);
 
     const config: PlaidLinkOptions = {
@@ -32,7 +32,7 @@ const PlaidLink = ({user, variant}: PlaidLinkProps) => {
         onSuccess,
     };
 
-    const { open, ready } = usePlaidLink(config);
+    const {open, ready} = usePlaidLink(config);
 
     return (
         <>
@@ -48,7 +48,7 @@ const PlaidLink = ({user, variant}: PlaidLinkProps) => {
                 <Button>
                     Connect bank
                 </Button>
-            ): (
+            ) : (
                 <Button>
                     Connect bank
                 </Button>
