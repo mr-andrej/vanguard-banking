@@ -110,6 +110,12 @@ export const logoutAccount = async () => {
 
 export const createLinkToken = async (user: User) => {
     try {
+        if (!user.name) {
+            console.log("[VANGUARD] User's name field was empty, populating automatically...");
+            user.name = user.firstName + user.lastName;
+            console.log("[VANGUARD] User's name field has been populated. New value is: " + user.name);
+        }
+
         const tokenParams = {
             user: {
                 client_user_id: user.$id,
