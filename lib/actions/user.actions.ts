@@ -27,8 +27,8 @@ export const signIn = async ({email, password}: signInProps) => {
     }
 };
 
-export const signUp = async (userData: SignUpParams) => {
-    const {email, password, firstName, lastName} = userData;
+export const signUp = async ({password, ...userData}:SignUpParams) => {
+    const {email, firstName, lastName} = userData;
 
     let newUserAccount;
 
@@ -110,17 +110,11 @@ export const logoutAccount = async () => {
 
 export const createLinkToken = async (user: User) => {
     try {
-        if (!user.name) {
-            console.log("[VANGUARD] User's name field was empty, populating automatically...");
-            user.name = user.firstName + user.lastName;
-            console.log("[VANGUARD] User's name field has been populated. New value is: " + user.name);
-        }
-
         const tokenParams = {
             user: {
                 client_user_id: user.$id,
             },
-            client_name: user.name,
+            client_name: `${user.firstName} ${user.lastName}`,
             products: ["auth"] as Products[],
             language: "en",
             country_codes: ["US"] as CountryCode[],
