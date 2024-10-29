@@ -58,8 +58,8 @@ export const signUp = async ({password, ...userData}:SignUpParams) => {
         const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl);
 
         const newUser = await database.createDocument(
-            DATABASE_ID,
-            USER_COLLECTION_ID,
+            DATABASE_ID!,
+            USER_COLLECTION_ID!,
             ID.unique(),
             {
                 ...userData,
@@ -135,14 +135,14 @@ export const createBankAccount = async (
         accountId,
         accessToken,
         fundingSourceUrl,
-        sharableId,
+        shareableId,
     }: createBankAccountProps) => {
     try {
         const {database} = await createAdminClient();
 
         const bankAccount = await database.createDocument(
-            DATABASE_ID,
-            BANK_COLLECTION_ID,
+            DATABASE_ID!,
+            BANK_COLLECTION_ID!,
             ID.unique(),
             {
                 userId,
@@ -150,7 +150,7 @@ export const createBankAccount = async (
                 accountId,
                 accessToken,
                 fundingSourceUrl,
-                sharableId,
+                shareableId,
             },
         );
 
@@ -199,6 +199,7 @@ export const exchangePublicToken = async ({publicToken, user}: exchangePublicTok
             throw Error;
         }
 
+        console.log("Attempting to createBankAccount");
         // Create a bank account using the user ID, item ID, account ID, access token, funding source URL, and sharable ID
         await createBankAccount({
             userId: user.$id,
@@ -206,8 +207,12 @@ export const exchangePublicToken = async ({publicToken, user}: exchangePublicTok
             accountId: accountData.account_id,
             accessToken,
             fundingSourceUrl,
-            sharableId: encryptId(accountData.account_id),
+            shareableId: encryptId(accountData.account_id),
+        }).finally(() => {
+            console.log("Finished attempting to create bank account");
         });
+
+
 
         // Revalidate the path to reflect the changes
         revalidatePath("/");
