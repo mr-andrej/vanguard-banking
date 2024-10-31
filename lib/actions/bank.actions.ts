@@ -101,9 +101,6 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
             accessToken: bank?.accessToken,
         });
 
-        // Parse transactions result, defaulting to empty array if undefined
-        const parsedTransactions = JSON.parse(transactions || '[]');
-
         const account = {
             id: accountData.account_id,
             availableBalance: accountData.balances.available!,
@@ -118,7 +115,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
         };
 
         // Sort transactions by date such that the most recent transaction is first
-        const allTransactions = [...parsedTransactions, ...transferTransactions].sort(
+        const allTransactions = [...transactions, ...transferTransactions].sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
 
