@@ -17,13 +17,13 @@ const Footer = ({user, type = "desktop"}: FooterProps) => {
         <footer className="footer">
             <div className={type === "desktop" ? "footer_name" : "footer_name-mobile"}>
                 <p className="text-xl font-bold text-gray-700">
-                    {user?.name[0].toUpperCase()}
+                    {user?.firstName[0].toUpperCase()}
                 </p>
             </div>
 
             <div className={type === "desktop" ? "footer_email" : "footer_email-mobile"}>
                 <h1 className="text-14 truncate text-gray-700 font-semibold">
-                    {user?.name}
+                    {user?.firstName}
                 </h1>
                 <p className="text-12 truncate font-normal text-gray-600">
                     {user?.email}
