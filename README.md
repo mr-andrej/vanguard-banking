@@ -35,7 +35,7 @@
 ## 📋 Implementation Status
 
 - [x] Authentication (Sign in & Sign up)
-- [ ] Bank account integration [90%]
+- [x] Bank account integration
 - [ ] Transaction tracking [0%]
 - [ ] Money transfers [0%]
 - [ ] Dashboard analytics [0%]
