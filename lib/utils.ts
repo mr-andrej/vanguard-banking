@@ -82,12 +82,6 @@ export const removeSpecialCharacters = (value: string) => {
     return value.replace(/[^\w\s]/gi, "");
 };
 
-interface UrlQueryParams {
-    params: string;
-    key: string;
-    value: string;
-}
-
 export function formUrlQuery({params, key, value}: UrlQueryParams) {
     const currentUrl = qs.parse(params);
 

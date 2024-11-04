@@ -328,3 +328,9 @@ declare interface getBankProps {
 declare interface getBankByAccountIdProps {
     accountId: string;
 }
+
+interface UrlQueryParams {
+    params: string;
+    key: string;
+    value: string;
+}

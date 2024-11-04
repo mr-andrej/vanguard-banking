@@ -13,7 +13,8 @@ export const BankTabItem = ({account, appwriteItemId}: BankTabItemProps) => {
             params: searchParams.toString(),
             key: "id",
             value: account?.appwriteItemId,
-        };
+        } as UrlQueryParams;
+
         const newUrl = formUrlQuery(urlQueryParams);
         router.push(newUrl, {scroll: false});
     };
