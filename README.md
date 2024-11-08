@@ -37,8 +37,8 @@
 - [x] Authentication (Sign in & Sign up)
 - [x] Bank account integration
 - [x] Transaction tracking
-- [ ] Money transfers [0%]
-- [ ] Dashboard analytics [0%]
+- [x] Money transfers
+- [x] Dashboard analytics
 - [ ] Stock market integration [0%]
 - [ ] Suite of tools [0%]
 
