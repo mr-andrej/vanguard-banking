@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🏦 Vanguard</h1>
+  <h1>🏦 Vanguard Banking</h1>
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
@@ -7,7 +7,7 @@
 
 <div align="center">
   <strong>A modern financial management platform built for the future</strong>
-  <p>Manage your finances, track transactions, and transfer money seamlessly</p>
+  <p>Manage your finances, invest in the stock market, track transactions, and transfer money seamlessly</p>
 </div>
 
 ## ✨ Features
