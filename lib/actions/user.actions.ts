@@ -29,7 +29,7 @@ export const getUserInfo = async ({userId}: getUserInfoProps) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 export const signIn = async ({email, password}: signInProps) => {
     try {

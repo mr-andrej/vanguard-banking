@@ -64,10 +64,10 @@ export const getAccounts = async ({userId}: getAccountsProps) => {
 };
 
 // Get one bank account
-export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
+export const getAccount = async ({appwriteItemId}: getAccountProps) => {
     try {
         // get bank from db
-        const bank = await getBank({ documentId: appwriteItemId });
+        const bank = await getBank({documentId: appwriteItemId});
 
         // get account info from plaid
         const accountsResponse = await plaidClient.accountsGet({
@@ -89,7 +89,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
                 paymentChannel: transferData.channel,
                 category: transferData.category,
                 type: transferData.senderBankId === bank.$id ? "debit" : "credit",
-            })
+            }),
         );
 
         // get institution info from plaid
@@ -116,7 +116,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
 
         // Sort transactions by date such that the most recent transaction is first
         const allTransactions = [...transactions, ...transferTransactions].sort(
-            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
         );
 
         return parseStringify({
