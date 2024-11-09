@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import React from "react";
 import HeaderBox from "@/components/headerBox";
 import PaymentTransferForm from "@/components/PaymentTransferForm";
@@ -9,7 +11,7 @@ const Transfer = async () => {
     const accounts = await getAccounts({userId: loggedIn.$id});
 
     if (!accounts) {
-        return ;
+        return;
     }
 
     const accountsData = accounts?.data;

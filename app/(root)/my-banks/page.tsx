@@ -1,3 +1,4 @@
+import {redirect} from "next/navigation";
 import React from "react";
 import HeaderBox from "@/components/headerBox";
 import {getLoggedInUser} from "@/lib/actions/user.actions";
@@ -5,9 +6,15 @@ import {getAccounts} from "@/lib/actions/bank.actions";
 import BankCard from "@/components/BankCard";
 import {Account} from "node-appwrite";
 
+export const dynamic = "force-dynamic";
+
 const MyBanks = async () => {
     const loggedIn = await getLoggedInUser();
     const accounts = await getAccounts({userId: loggedIn.$id});
+
+    if (!loggedIn) {
+        redirect("/sign-in");
+    }
 
     return (
         <section className="flex">
