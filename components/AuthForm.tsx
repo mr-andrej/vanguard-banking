@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {zodResolver} from "@hookform/resolvers/zod";
-import {Control, useForm} from "react-hook-form";
+import {Control, useForm, UseFormReturn} from "react-hook-form";
 import {z} from "zod";
 import {Button} from "@/components/ui/button";
 import {Form} from "@/components/ui/form";
