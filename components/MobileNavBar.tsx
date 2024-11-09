@@ -8,6 +8,7 @@ import {sidebarLinks} from "@/constants";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
 import Footer from "@/components/Footer";
+import {MobileNavBarProps} from "@/types";
 
 const MobileNavBar = ({user}: MobileNavBarProps) => {
     const pathname = usePathname();

@@ -5,6 +5,7 @@ import {BankTabItem} from "@/components/BankTabItem";
 import BankInfo from "@/components/BankInfo";
 import TransactionsTable from "@/components/TransactionsTable";
 import {Pagination} from "@/components/Pagination";
+import {RecentTransactionsProps, Account} from "@/types";
 
 const RecentTransactions = ({accounts, transactions = [], appwriteItemId, page = 1}: RecentTransactionsProps) => {
     const rowsPerPage = 10;

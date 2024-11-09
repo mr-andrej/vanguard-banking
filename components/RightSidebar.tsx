@@ -4,6 +4,7 @@ import Image from "next/image";
 import BankCard from "@/components/BankCard";
 import {countTransactionCategories} from "@/lib/utils";
 import Category from "@/components/Category";
+import {CategoryCount, RightSidebarProps} from "@/types";
 
 const RightSidebar = ({user, transactions, banks}: RightSidebarProps) => {
     const categories: CategoryCount[] = countTransactionCategories(transactions);

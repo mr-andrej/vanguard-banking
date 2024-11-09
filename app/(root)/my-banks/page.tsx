@@ -3,6 +3,7 @@ import HeaderBox from "@/components/headerBox";
 import {getLoggedInUser} from "@/lib/actions/user.actions";
 import {getAccounts} from "@/lib/actions/bank.actions";
 import BankCard from "@/components/BankCard";
+import {Account} from "node-appwrite";
 
 const MyBanks = async () => {
     const loggedIn = await getLoggedInUser();

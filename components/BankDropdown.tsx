@@ -6,6 +6,7 @@ import {useState} from "react";
 
 import {Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger} from "@/components/ui/select";
 import {formatAmount, formUrlQuery} from "@/lib/utils";
+import {Account, BankDropdownProps} from "@/types";
 
 export const BankDropdown = ({
                                  accounts = [],

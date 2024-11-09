@@ -4,6 +4,7 @@ import Image from "next/image";
 import {useRouter, useSearchParams} from "next/navigation";
 
 import {cn, formatAmount, formUrlQuery, getAccountTypeColors} from "@/lib/utils";
+import {AccountTypes, BankInfoProps, UrlQueryParams} from "@/types";
 
 const BankInfo = ({account, appwriteItemId, type}: BankInfoProps) => {
     const router = useRouter();

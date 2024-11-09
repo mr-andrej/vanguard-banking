@@ -2,7 +2,7 @@
 
 import {
     ACHClass,
-    CountryCode,
+    CountryCode, Transaction,
     TransferAuthorizationCreateRequest,
     TransferCreateRequest,
     TransferNetwork,
@@ -14,6 +14,7 @@ import {parseStringify} from "../utils";
 
 import {getTransactionsByBankId} from "./transaction.actions";
 import {getBank, getBanks} from "./user.actions";
+import {Bank, getAccountProps, getAccountsProps, getInstitutionProps, getTransactionsProps} from "@/types";
 
 // Get multiple bank accounts
 export const getAccounts = async ({userId}: getAccountsProps) => {

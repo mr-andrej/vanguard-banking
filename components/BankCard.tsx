@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {formatAmount} from "@/lib/utils";
 import Copy from "@/components/Copy";
+import {CreditCardProps} from "@/types";
 
 const BankCard = ({account, userName, showBalance = true}: CreditCardProps) => {
     return (

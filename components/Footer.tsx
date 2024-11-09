@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import {logoutAccount} from "@/lib/actions/user.actions";
 import {useRouter} from "next/navigation";
+import {FooterProps} from "@/types";
 
 const Footer = ({user, type = "desktop"}: FooterProps) => {
     const router = useRouter();

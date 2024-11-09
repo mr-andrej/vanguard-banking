@@ -5,6 +5,7 @@ import {getAccount, getAccounts} from "@/lib/actions/bank.actions";
 import {formatAmount} from "@/lib/utils";
 import TransactionsTable from "@/components/TransactionsTable";
 import {Pagination} from "@/components/Pagination";
+import {SearchParamProps} from "@/types";
 
 const TransactionHistory = async ({searchParams: {id, page}}: SearchParamProps) => {
     const currentPage = Number(page as string) || 1;

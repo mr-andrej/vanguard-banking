@@ -4,6 +4,7 @@ import {PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink} from "react-plaid-li
 import {useRouter} from "next/navigation";
 import {createLinkToken, exchangePublicToken} from "@/lib/actions/user.actions";
 import Image from "next/image";
+import {PlaidLinkProps} from "@/types";
 
 const PlaidLink = ({user, variant}: PlaidLinkProps) => {
     const router = useRouter();
