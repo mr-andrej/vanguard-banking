@@ -304,8 +304,8 @@ declare interface CreateNoteProps {
     title: string;
     content: string;
     userId: string;
-    createdAt: string;
-    updatedAt: string;
+    createdAt: number;
+    updatedAt: number;
 }
 
 declare interface getTransactionsByBankIdProps {

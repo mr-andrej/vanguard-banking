@@ -5,68 +5,46 @@ import Link from "next/link";
 import Image from "next/image";
 
 import {zodResolver} from "@hookform/resolvers/zod";
-import {Control, useForm} from "react-hook-form";
+import {Control, useForm, UseFormReturn} from "react-hook-form";
 import {z} from "zod";
 import {Button} from "@/components/ui/button";
 import {Form} from "@/components/ui/form";
 import CustomInput from "@/components/CustomInput";
-import {authFormSchema} from "@/lib/utils";
+import {authFormSchema, noteSchema} from "@/lib/utils";
 import {Loader2} from "lucide-react";
 import {useRouter} from "next/navigation";
-import {signIn, signUp} from "@/lib/actions/user.actions";
+import {getLoggedInUser, signIn, signUp} from "@/lib/actions/user.actions";
 import PlaidLink from "@/components/PlaidLink";
+import {createNote} from "@/lib/actions/notes.actions";
 
-const AuthForm = ({type}: { type: string }) => {
+const NoteForm = async ({type}: { type: string }) => {
     const router = useRouter();
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const formSchema = authFormSchema(type);
+    const formSchema = noteSchema();
+    const loggedIn = await getLoggedInUser();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-        defaultValues: {
-            email: "",
-            password: "",
-        },
     });
 
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
         setIsLoading(true);
 
         try {
-            // Sign up with Appwrite & Create a Plaid link token
-
-
-            if (type === "sign-up") {
-                const userData = {
-                    firstName: data.firstName!,
-                    lastName: data.lastName!,
-                    address1: data.address1!,
-                    city: data.city!,
-                    state: data.state!,
-                    postalCode: data.postalCode!,
-                    dateOfBirth: data.dateOfBirth!,
-                    ssn: data.ssn!,
-                    email: data.email,
-                    password: data.password,
+            if (type === "create") {
+                const noteData = {
+                    title: data.title!,
+                    content: data.content!,
+                    userId: loggedIn.userId,
+                    createdAt: Date.now(),
+                    updatedAt: Date.now()
                 };
 
+                const newNote = await createNote(noteData);
 
-                const newUser = await signUp(userData);
-
-                setUser(newUser);
-            }
-
-            if (type === "sign-in") {
-                const response = await signIn({
-                    email: data.email,
-                    password: data.password,
-                });
-
-                if (response) {
-                    router.push("/");
-                }
+                setUser(newNote);
             }
 
             console.log(data);
@@ -77,40 +55,9 @@ const AuthForm = ({type}: { type: string }) => {
         }
     };
 
+    // TODO: This form needs to be turned into the create note form
     return (
         <section className="auth-form">
-            <header className="flex flex-col gap-5 md:gap-8">
-                <Link href="/" className="cursor-pointer flex items-center gap-1 px-4">
-                    <Image src="/icons/logo.svg"
-                           width={34}
-                           height={34}
-                           alt="Vanguard logo"/>
-
-                    <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Vanguard</h1>
-                </Link>
-
-                <div className="flex flex-col gap-1 md:gap-3">
-                    <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
-                        {user
-                            ? "Link Account"
-                            : type === "sign-in"
-                                ? "Sign In"
-                                : "Sign Up"
-                        }
-                        <p className="text-16 font-normal text-gray-600">
-                            {user
-                                ? "Link your account to get started"
-                                : "Please enter your details"
-                            }
-                        </p>
-                    </h1>
-                </div>
-            </header>
-            {user ? (
-                <div className="flex flex-col gap-4">
-                    <PlaidLink user={user} variant="primary"/>
-                </div>
-            ) : (
                 <>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -175,8 +122,7 @@ const AuthForm = ({type}: { type: string }) => {
                         </Link>
                     </footer>
                 </>
-            )}
         </section>
     );
 };
-export default AuthForm;
+export default NoteForm;
