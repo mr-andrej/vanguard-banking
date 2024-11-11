@@ -263,6 +263,10 @@ declare interface getAccountsProps {
     userId: string;
 }
 
+declare interface getNotesProps {
+    userId: string;
+}
+
 declare interface getAccountProps {
     appwriteItemId: string;
 }
@@ -290,6 +294,14 @@ declare interface CreateTransactionProps {
     receiverId: string;
     receiverBankId: string;
     email: string;
+}
+
+declare interface CreateNoteProps {
+    title: string;
+    content: string;
+    userId: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 declare interface getTransactionsByBankIdProps {
