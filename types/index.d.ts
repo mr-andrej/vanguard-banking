@@ -267,6 +267,10 @@ declare interface getNotesProps {
     userId: string;
 }
 
+declare interface getNoteByIdProps {
+    documentId: string;
+}
+
 declare interface getAccountProps {
     appwriteItemId: string;
 }
