@@ -267,6 +267,10 @@ declare interface getNotesProps {
     userId: string;
 }
 
+declare interface getNoteByIdProps {
+    documentId: string;
+}
+
 declare interface getAccountProps {
     appwriteItemId: string;
 }
@@ -300,8 +304,8 @@ declare interface CreateNoteProps {
     title: string;
     content: string;
     userId: string;
-    createdAt: string;
-    updatedAt: string;
+    createdAt: number;
+    updatedAt: number;
 }
 
 declare interface getTransactionsByBankIdProps {

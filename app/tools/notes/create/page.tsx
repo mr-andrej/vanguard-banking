@@ -3,9 +3,9 @@ import NoteForm from "@/components/NoteForm";
 
 const Page = () => {
     return (
-        <div>
-            List all notes of this user here
-        </div>
+        <section className="flex-center size-full max-sm:px-6">
+            <NoteForm type="create"/>
+        </section>
     );
 };
 export default Page;

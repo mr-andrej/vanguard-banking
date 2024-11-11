@@ -204,3 +204,8 @@ export const authFormSchema = (type: string) => z.object({
     email: z.string().email(),
     password: z.string().min(8),
 });
+
+export const noteSchema = () => z.object({
+    title: z.string().min(5),
+    content: z.string().min(50),
+});

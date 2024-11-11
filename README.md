@@ -39,8 +39,8 @@
 - [x] Transaction tracking
 - [x] Money transfers
 - [x] Dashboard analytics
+- [ ] Suite of tools [10%]
 - [ ] Stock market integration [0%]
-- [ ] Suite of tools [0%]
 
 ## 🛠️ Tech Stack
 
