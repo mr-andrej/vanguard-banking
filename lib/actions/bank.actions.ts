@@ -2,7 +2,8 @@
 
 import {
     ACHClass,
-    CountryCode, Transaction,
+    CountryCode,
+    Transaction,
     TransferAuthorizationCreateRequest,
     TransferCreateRequest,
     TransferNetwork,

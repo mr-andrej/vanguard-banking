@@ -20,6 +20,11 @@ export const sidebarLinks = [
         label: "Transfer Funds",
     },
     {
+        imgURL: "/icons/deposit.svg", // This logo needs to be changed, this one doesn't go well
+        route: "/tools",
+        label: "Tools",
+    },
+    {
         imgURL: "/icons/candles.svg",
         route: "/trading",
         label: "Trading",
