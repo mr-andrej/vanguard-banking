@@ -57,4 +57,4 @@ export const getNoteById = async ({documentId}: getNoteByIdProps) => {
     } catch (error) {
         console.log(error);
     }
-}
+};

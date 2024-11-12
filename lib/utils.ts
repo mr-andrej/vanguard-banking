@@ -3,7 +3,7 @@ import {type ClassValue, clsx} from "clsx";
 import qs from "query-string";
 import {twMerge} from "tailwind-merge";
 import {z} from "zod";
-import {AccountTypes, CategoryCount, UrlQueryParams, Transaction} from "@/types";
+import {AccountTypes, CategoryCount, Transaction, UrlQueryParams} from "@/types";
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));

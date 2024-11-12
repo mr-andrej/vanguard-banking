@@ -13,7 +13,12 @@ import {
     exchangePublicTokenProps,
     getBankByAccountIdProps,
     getBankProps,
-    getBanksProps, getUserInfoProps, NewDwollaCustomerParams, signInProps, SignUpParams, User,
+    getBanksProps,
+    getUserInfoProps,
+    NewDwollaCustomerParams,
+    signInProps,
+    SignUpParams,
+    User,
 } from "@/types";
 
 const {

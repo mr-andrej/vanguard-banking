@@ -2,7 +2,7 @@ import React from "react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {cn, formatAmount, formatDateTime, getTransactionStatus, removeSpecialCharacters} from "@/lib/utils";
 import {transactionCategoryStyles} from "@/constants";
-import {CategoryBadgeProps, TransactionTableProps, Transaction} from "@/types";
+import {CategoryBadgeProps, Transaction, TransactionTableProps} from "@/types";
 
 
 const CategoryBadge = ({category}: CategoryBadgeProps) => {
