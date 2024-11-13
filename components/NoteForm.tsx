@@ -5,12 +5,11 @@ import React, {useState} from "react";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Control, useForm} from "react-hook-form";
 import {z} from "zod";
-import {Form, FormControl} from "@/components/ui/form";
+import {Form} from "@/components/ui/form";
 import CustomInput from "@/components/CustomInput";
 import {noteSchema} from "@/lib/utils";
 import {createNote} from "@/lib/actions/notes.actions";
 import {User} from "@/types";
-import {Textarea} from "@/components/ui/textarea";
 import {Loader2} from "lucide-react";
 import {Button} from "@/components/ui/button";
 
@@ -31,14 +30,14 @@ const NoteForm = ({loggedIn}: { loggedIn: User }) => {
             const noteData = {
                 title: data.title!,
                 content: data.content!,
-                userId: loggedIn.userId,
+                userId: loggedIn.$id,
                 createdAt: Date.now().toString(),
                 updatedAt: Date.now().toString(),
             };
 
             const newNote = await createNote(noteData);
-
-            console.log(noteData);
+            console.log({loggedIn})
+            console.log(newNote);
         } catch (error) {
             console.log(error);
         } finally {
