@@ -5,6 +5,7 @@ import {getLoggedInUser} from "@/lib/actions/user.actions";
 import {getAccounts} from "@/lib/actions/bank.actions";
 import BankCard from "@/components/BankCard";
 import {Account} from "node-appwrite";
+import AddBank from "@/components/AddBank";
 
 export const dynamic = "force-dynamic";
 
@@ -25,9 +26,11 @@ const MyBanks = async () => {
                 />
 
                 <div className="space-y-4">
-                    <h2 className="header-2">
-                        Your cards
-                    </h2>
+                    <div className="flex items-center ">
+                        <h2 className="header-2">Your banks</h2>
+                        <AddBank user={loggedIn}/>
+                    </div>
+
                     <div className="flex flex-wrap gap-6">
                         {accounts && accounts.data.map((account: Account) => (
                             <BankCard

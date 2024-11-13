@@ -2,8 +2,7 @@ import React from "react";
 import {getLoggedInUser} from "@/lib/actions/user.actions";
 import {getNotes} from "@/lib/actions/notes.actions";
 import {redirect} from "next/navigation";
-import {Account} from "node-appwrite/dist";
-import BankCard from "@/components/BankCard";
+import HeaderBox from "@/components/headerBox";
 
 const Page = async () => {
     const loggedIn = await getLoggedInUser();
@@ -16,14 +15,14 @@ const Page = async () => {
     console.log({notes});
 
     return (
-        <div>
-            {notes?.map((note, index) => (
-                <div>
-                    <h1>{note.title}</h1>
-                    <p>{note.content}</p>
-                </div>
+        <section className="notes">
+            {notes?.map((note) => (
+                <HeaderBox
+                    title={note.title}
+                    subtext={note.content}
+                />
             ))}
-        </div>
+        </section>
     );
 };
 export default Page;

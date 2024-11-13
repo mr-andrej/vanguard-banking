@@ -221,6 +221,11 @@
         @apply text-14 lg:text-16 font-normal text-gray-600;
     }
 
+    /* Tools */
+    .notes {
+        @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
+    }
+
     /* Bank Card */
     .bank-card {
         @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white bg-bank-gradient shadow-creditCard backdrop-blur-[6px];
