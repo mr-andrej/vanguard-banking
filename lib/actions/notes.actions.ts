@@ -35,7 +35,9 @@ export const getNotes = async ({userId}: getNotesProps) => {
         const notes = await database.listDocuments(
             DATABASE_ID!,
             NOTES_COLLECTION_ID!,
-            [Query.equal("userId", [userId])],
+            [
+                Query.equal('userId', [userId])
+            ]
         );
 
         return parseStringify(notes.documents);
