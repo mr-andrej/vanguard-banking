@@ -275,6 +275,23 @@ declare interface getNoteByIdProps {
     documentId: string;
 }
 
+export type UpdateNoteProps = {
+    documentId: string;
+    title: string;
+    content: string;
+};
+
+export type EditNoteProps = {
+    isOpen: boolean;
+    onClose: () => void;
+    note: {
+        $id: string;
+        title: string;
+        content: string;
+    };
+    onNoteUpdated: () => void;
+};
+
 declare interface getAccountProps {
     appwriteItemId: string;
 }

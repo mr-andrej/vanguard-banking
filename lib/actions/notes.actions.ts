@@ -3,7 +3,7 @@
 import {ID, Query} from "node-appwrite";
 import {createAdminClient} from "../appwrite";
 import {parseStringify} from "../utils";
-import {CreateNoteProps, getNoteByIdProps, getNotesProps} from "@/types";
+import {CreateNoteProps, getNoteByIdProps, getNotesProps, UpdateNoteProps} from "@/types";
 
 const {
     APPWRITE_DATABASE_ID: DATABASE_ID,
@@ -56,6 +56,25 @@ export const getNoteById = async ({documentId}: getNoteByIdProps) => {
         );
 
         return parseStringify(note.documents);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const updateNote = async ({ documentId, title, content }: UpdateNoteProps) => {
+    try {
+        const { database } = await createAdminClient();
+        const updatedNote = await database.updateDocument(
+            DATABASE_ID!,
+            NOTES_COLLECTION_ID!,
+            documentId,
+            {
+                title,
+                content,
+            }
+        );
+
+        return parseStringify(updatedNote);
     } catch (error) {
         console.log(error);
     }
