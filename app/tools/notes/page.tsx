@@ -1,8 +1,8 @@
-import React from "react";
+import {Suspense} from "react";
 import {getLoggedInUser} from "@/lib/actions/user.actions";
 import {getNotes} from "@/lib/actions/notes.actions";
 import {redirect} from "next/navigation";
-import HeaderBox from "@/components/headerBox";
+import NotesContent from "@/components/NotesContent";
 
 const Page = async () => {
     const loggedIn = await getLoggedInUser();
@@ -11,18 +11,13 @@ const Page = async () => {
         redirect("/sign-in");
     }
 
-    const notes = await getNotes({userId: loggedIn.userId});
-    console.log({notes});
+    const initialNotes = await getNotes({userId: loggedIn.userId});
 
     return (
-        <section className="notes">
-            {notes?.map((note) => (
-                <HeaderBox
-                    title={note.title}
-                    subtext={note.content}
-                />
-            ))}
-        </section>
+        <Suspense fallback={<div>Loading...</div>}>
+            <NotesContent initialNotes={initialNotes} userId={loggedIn.userId}/>
+        </Suspense>
     );
 };
+
 export default Page;

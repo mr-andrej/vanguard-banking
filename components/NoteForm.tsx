@@ -36,7 +36,7 @@ const NoteForm = ({loggedIn}: { loggedIn: User }) => {
             };
 
             const newNote = await createNote(noteData);
-            console.log({loggedIn})
+            console.log({loggedIn});
             console.log(newNote);
         } catch (error) {
             console.log(error);

@@ -7,7 +7,7 @@ const Page = async () => {
 
     return (
         <div className="flex-center size-full max-sm:px-6">
-            <NoteForm loggedIn={loggedIn} />
+            <NoteForm loggedIn={loggedIn}/>
         </div>
     );
 };
