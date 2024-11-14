@@ -7,7 +7,6 @@ import {sidebarLinks} from "@/constants";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
 import Footer from "@/components/Footer";
-import PlaidLink from "@/components/PlaidLink";
 import {SidebarProps} from "@/types";
 
 const Sidebar = ({user}: SidebarProps) => {

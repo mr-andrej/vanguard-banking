@@ -36,8 +36,8 @@ export const getNotes = async ({userId}: getNotesProps) => {
             DATABASE_ID!,
             NOTES_COLLECTION_ID!,
             [
-                Query.equal('userId', [userId])
-            ]
+                Query.equal("userId", [userId]),
+            ],
         );
 
         return parseStringify(notes.documents);
@@ -61,9 +61,9 @@ export const getNoteById = async ({documentId}: getNoteByIdProps) => {
     }
 };
 
-export const updateNote = async ({ documentId, title, content }: UpdateNoteProps) => {
+export const updateNote = async ({documentId, title, content}: UpdateNoteProps) => {
     try {
-        const { database } = await createAdminClient();
+        const {database} = await createAdminClient();
         const updatedNote = await database.updateDocument(
             DATABASE_ID!,
             NOTES_COLLECTION_ID!,
@@ -71,7 +71,7 @@ export const updateNote = async ({ documentId, title, content }: UpdateNoteProps
             {
                 title,
                 content,
-            }
+            },
         );
 
         return parseStringify(updatedNote);
