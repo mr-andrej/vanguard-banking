@@ -23,7 +23,7 @@ const RecentTransactions = ({accounts, transactions = [], appwriteItemId, page =
                     Recent transactions
                 </h2>
                 <Link href={`/transaction-history/?id=${appwriteItemId}`} className="view-all-btn">
-                    View all
+                    View transaction history
                 </Link>
             </header>
 
